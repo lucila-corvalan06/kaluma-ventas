@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaluma - <%= seccion.nombre %></title>
+</head>
+<body>
+  <header>
+    <h1>Kaluma</h1>
+    <p><a href="/">&larr; Volver al inicio</a></p>
+  </header>
+
+  <main>
+    <section>
+      <h2><%= seccion.nombre %></h2>
+
+      <% if (ventas.length === 0) { %>
+        <p>Todavía no hay productos cargados en esta categoría.</p>
+      <% } else { %>
+        <ul class="lista-productos">
+          <% ventas.forEach(venta => { %>
+            <li class="producto">
+              <img src="<%= venta.foto %>" alt="<%= venta.nombre %>" width="200" />
+              <h3><%= venta.nombre %></h3>
+              <p><%= venta.descripcion %></p>
+              <p><strong>$<%= venta.precio %></strong></p>
+              <p><a href="<%= venta.link %>" target="_blank">Ver producto</a></p>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Kaluma</p>
+  </footer>
+</body>
+</html>

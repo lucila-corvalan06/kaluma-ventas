@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaluma · Catálogo</title>
+</head>
+<body>
+    <header>
+        <h1>Kaluma</h1>
+        <p>Bazar y decoración para el hogar</p>
+    </header>
+    <main>
+        <section>
+            <h2>Elegí una categoría</h2>
+            <nav>
+                <ul class="lista-secciones">
+                    <% secciones.forEach(seccion => { %>
+                        <li>
+                            <a href="/secciones/<%= seccion.slug %>">
+                                <%= seccion.nombre %>
+                            </a>
+                        </li>
+
+                    <% }) %>
+                </ul>
+            </nav>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Kaluma</p>
+    </footer>
+    
+</body>
+</html>
